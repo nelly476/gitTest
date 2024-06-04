@@ -12,13 +12,13 @@ function getComputerChoice() {
     }
 }
 
-function getHumanChoice() {
-    const input = prompt("choose rock/paper/scissors") 
-    return input
-}
+// function getHumanChoice() {
+//     const input = prompt("choose rock/paper/scissors") 
+//     return input
+// }
 
-function playRound() {
-    const human = getHumanChoice()
+function playRound(human) {
+    // const human = getHumanChoice()
     const computer = getComputerChoice()
     if (human === "rock") {
         if (computer === "rock") {
@@ -51,20 +51,46 @@ function playRound() {
 
 }
 
-console.log(playRound())
+// console.log(playRound())
 
 
-const container = document.querySelector("#container");
+// const container = document.querySelector("#container");
 
-const content = document.createElement("div")
-content.classList.add("content")
-content.textContent = "Text content"
+// const content = document.createElement("div")
+// content.classList.add("content")
+// content.textContent = "Text content"
 
-const paragraph = document.createElement("p")
-paragraph.style.color = "red"
-paragraph.textContent = "I'm red"
+// const paragraph = document.createElement("p")
+// paragraph.style.color = "red"
+// paragraph.textContent = "I'm red"
 
-container.appendChild(content)
-container.appendChild(paragraph)
+// container.appendChild(content)
+// container.appendChild(paragraph)
 
+const buttons = document.querySelectorAll("#button")
+
+buttons.forEach(button => {
+    button.addEventListener("click", e => {
+        switch (e.target.textContent) {
+            case "Rock":
+                // console.log("it's rock")
+                console.log(playRound("rock"))
+                break;
+            case "Paper":
+                // console.log("it's paper")
+                console.log(playRound("paper"))
+                break;
+            case "Scissors":
+                // console.log("it's scissors")
+                console.log(playRound("scissors"))
+                break;
+            
+            // default:
+            //     console.log("error, no such button")
+        }
+        // console.log(e.target.textContent === "Rock")
+    })
+})
+
+// console.log(buttons)
 
