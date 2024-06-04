@@ -31,6 +31,8 @@ function updateScore() {
 
     if (HumanScore === 5 || computerScore === 5) {
         resultField.textContent = HumanScore > computerScore ? "Human won!!!" : "Computer won!!!"
+        HumanScore = 0;
+        computerScore = 0;
     }
 }
 
