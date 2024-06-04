@@ -38,7 +38,7 @@ function playRound() {
             return `human - ${human}, computer - ${computer}, so computer wins`
         }
     } 
-    else {
+    else if (human === "scissors") {
         if (computer === "scissors") {
             return `human - ${human}, computer - ${computer}, so it's a tie`
         } else if (computer === "paper") {
@@ -47,8 +47,24 @@ function playRound() {
             return `human - ${human}, computer - ${computer}, so computer wins`
         }
     }
+    return "ERROR"
 
-    return human + computer
 }
 
 console.log(playRound())
+
+
+const container = document.querySelector("#container");
+
+const content = document.createElement("div")
+content.classList.add("content")
+content.textContent = "Text content"
+
+const paragraph = document.createElement("p")
+paragraph.style.color = "red"
+paragraph.textContent = "I'm red"
+
+container.appendChild(content)
+container.appendChild(paragraph)
+
+
